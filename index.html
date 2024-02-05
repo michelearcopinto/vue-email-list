@@ -21,9 +21,13 @@
                 <h4 class="card-title">Descrizione:</h4>
                 <p class="card-text">Attraverso l'apposita API di Boolean generare 10 indirizzi email e stamparli in
                     pagina all'interno di una lista.</p>
-                <ul>
-
+                <a class="btn btn-primary" role="button" @click="requestRandomMail()">Button</a>
+                <hr>
+                <ul v-if="randomMails.length === 10">
+                    <li v-for="(mail, index) in randomMails" :key="index">{{ mail }}</li>
                 </ul>
+                <p v-else>Nessuna mail disponibile</p>
+
             </div>
         </div>
     </div>
